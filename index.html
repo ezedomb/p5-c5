@@ -3,69 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<!-- Link al framework css, la parte livianita -->
+    <title>Grid System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="gridstyle.css">
+
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+      }
+      
+      #myBtn:hover {
+        background-color: #555;
+      }
+      </style>
+
+
+
+
+
 </head>
 <body>
-    <h1>Bienvenidos a Bootstrap</h1>
 
-    <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#!">Active</a>
+<!------------------------- Navbar ------------------------------------------------------------>
+
+
+<div class="container-fluid fixed-top">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Copated</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://www.google.com/" target="blank">Google<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!">Link</a>
+          <a class="nav-link" href="https://www.facebook.com/">Facebook</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="https://www.amazon.com/" target="blank">Amazon<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#jumbo">Jumbotron</a>
+            <a class="dropdown-item" href="#formulario">Form</a>
+            <a class="dropdown-item" href="#grillas">Practica con grillas</a>
+            <a class="dropdown-item" href="#anidadas">Columnas anidadas</a>
+            <a class="dropdown-item" href="#carousel-example-2">Carousel</a>
+
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#!">Disabled</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">enabled</a>
         </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" aria-label="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
 
-      <div class="jumbotron">
-        <h1 class="display-3">Hello, world!</h1>
+</div>
+
+<br>
+<!------------------------- jumbotron ------------------------------------------------------------>
+<br id="jumbo">
+  
+      <br>
+      <h1 class="text-center">Jumbotron</h1>    
+
+      <div class="jumbotron container">
+        <h1 class="display-3">Goodbye, world!</h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
                         calling extra attention to featured content or information.</p>
         <hr class="my-2">
         <p>It uses utility classes for typography and
            spacing to space content out within the larger container.</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
+        <p class="lead d-flex justify-content-around">
+          <a class="btn btn-primary btn-lg" href="#!" role="button" data-toggle="collapse" data-target="#lanada">Más info</a>
+          
+          <a class="btn btn-primary btn-lg" href="#!" role="button" data-toggle="collapse" data-target="#lafrance">Contactar</a>
+          <div id="lanada" class="collapse">
+            Lamentablemente no hay mas info . . .
+          </div>
+          <div id="lafrance" class="collapse">
+            Contacto en Francia
+          </div>
+          
         </p>
       </div>
+      <br>
+      <br>
 
-      <div class="container">
-        <div class="row">
-            <div class="col-sm-6 verde">
+<!------------------------- Formulario ------------------------------------------------------------>
 
-                <form>
+<div class="container" id="formulario">
+  <div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+
+
+              <br>
+              <br>
+
+              <h1 class="text-center">F O R M</h1>    
+
+              <br>
+              <br>
+
+
+              <form action="https://formspree.io/f/xknpywrv" method="POST">
                     <div class="form-group">
-                      <label for="formGroupExampleInput">Example label</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+
+                      <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Nombre" name="nombre">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                      <small id="emailHelp" class="form-text text-muted">We'll always share your email with someone else.</small>
                     </div>
                     <div class="form-group">
-                      <label for="formGroupExampleInput2">Another label</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                     </div>
+                    <div class="form-group form-check text-center">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="acepta">
+                      <label class="form-check-label" for="exampleCheck1">Acepto las bases y condiciones</label>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+
                   </form>
                   
+                  <br>
+                  <br>
+                </div> 
+                <div class="col-lg-4"></div>
+              </div>
+               
+</div>   
+
+<!----------------------------------------- Practica con grillas --------------------------------------->
+<br id="grillas">
+<br>
+<h1 class="text-center">Practica con grillas</h1>    
+<br>
 
 
-
-            </div>
-            
-            
-              
-
-            <div class="col-sm-6 verde">Columna2<br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quas necessitatibus temporibus molestias aliquam laboriosam commodi architecto odio sunt, voluptatibus placeat ratione quod quam consequuntur in praesentium quibusdam quos facere.</div>
-            
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 verde">col 3</div>
+            <div class="col-sm-3 verde">col 3</div>
+            <div class="col-sm-3 verde">col 3</div>
+            <div class="col-sm-3 verde">col 3</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 verde">col 2</div>
+            <div class="col-sm-5 verde">col 5</div>
+            <div class="col-sm-4 verde">col 4</div>
+            <div class="col-sm-1 verde">col 1</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
+            <div class="col-sm-1 verde">col 1</div>
         </div>
     </div>
-      
-          
+<br>
+<br>
+<br>
+<br>
+<br>
+<!----------------------------------------- Columnas anidadas --------------------------------------->
+    <div class="container" id="anidadas">
+      <br>
+      <br>
+        <h1 class="text-center">Columnas anidadas - siempre hay que sumar 12</h1>    
+        <br>
+        <div class="row">
+            <div class="col-sm-6">Columna 1<br>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, rem aliquam magnam maxime id voluptas ipsa, ab sint, ut pariatur recusandae voluptates repudiandae veniam nesciunt porro dicta beatae mollitia tempore.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos consectetur cum, consequuntur, eos autem minima mollitia in sequi sint illum distinctio temporibus deserunt iste consequatur. Enim eligendi tenetur nostrum officiis.</div>
+            <div class="col-sm-6">Columna 2
 
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script></body>
+                <!-- Puntos 3 - Dentro de la segunda columna agregá una nueva row con tres columnas de 4, 
+                    y ponele unas pocas palabras de contenido a cada columna.-->
+                <div class="row">
+                    <div class="col-sm-4 bg-success">Unas pocas palabras</div>
+                    <div class="col-sm-4 bg-danger">Unas pocas palabras</div>
+                    <div class="col-sm-4 bg-success">Unas pocas palabras</div>
+                    <!-- Puntos 4 - Dentro de la misma columna, agregá una una nueva row abajo de la anterior 
+                    pero que esté dividida en dos columnas de 6.-->
+                    
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 bg-dark text-white">Columna 1</div>
+                    <div class="col-sm-6 bg-info">Columna 2</div>   
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+    <br>
+
+<!------------------------- Carousel ------------------------------------------------------------>
+
+<div class="container">
+  <h1 class="text-center">Carousel</h1>    
+  <br>
+
+
+    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+              alt="First slide">
+            <div class="mask rgba-black-light"></div>
+          </div>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive">Light mask</h3>
+            <p>First text</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+              alt="Second slide">
+            <div class="mask rgba-black-strong"></div>
+          </div>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive">Strong mask</h3>
+            <p>Secondary text</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+              alt="Third slide">
+            <div class="mask rgba-black-slight"></div>
+          </div>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive">Slight mask</h3>
+            <p>Third text</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  </div>
+
+
+
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">al tope</button>
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script></body>
+
+</body>
 </html>

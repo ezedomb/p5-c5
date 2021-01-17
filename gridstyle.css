@@ -1,0 +1,13 @@
+/* Fijate que a cada columna le agregamos una clase "verde". 
+Dentro del tag <head>, vinculá a una hoja de estilo tuya usando el tag <link> 
+y dentro de ella creá la clase verde (".verde") dándole un background-color: lime; 
+y un border: 1px solid orange;. Con eso vamos a ver mejor las columnas. */
+
+.verde {
+    background-color: lime;
+    border: 1px solid orange;
+}
+
+.verde {
+    display: flex;
+}
